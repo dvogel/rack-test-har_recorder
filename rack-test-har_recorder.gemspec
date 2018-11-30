@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["#{root}/lib"]
 
   spec.add_dependency "addressable", '~> 2.3'
-  spec.add_dependency "rack-test", '~> 0.6.3'
+  spec.add_dependency "rack-test", '>= 0.6.3'
   spec.add_dependency "json", '~> 2.0'
 
   spec.add_development_dependency "bundler", "~> 1.8"
