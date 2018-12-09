@@ -276,7 +276,7 @@ module Rack
         attr_reader :entries
 
         def self.from_file(path)
-          parsed = JSON.parse(File.read(path))
+          parsed = JSON.parse(::File.read(path))
           entries = EntrySet.from_array(parsed['entries'])
           new(entries: entries)
         end
