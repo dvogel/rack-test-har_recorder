@@ -73,29 +73,29 @@ module Rack
         end
 
         # Overrides method provided by Rack::Test::Methods
-        def put(uri, params = {}, env = {}, &block)
-          super(uri, params, env, &block).tap do |response|
+        def put(*args)
+          super(*args).tap do |response|
             record_request_response_pair!('put')
           end
         end
 
         # Overrides method provided by Rack::Test::Methods
-        def get(uri, params = {}, env = {}, &block)
-          super(uri, params, env, &block).tap do |response|
-            record_request_response_pair!('get')
+        def get(*args)
+          super(*args).tap do |response|
+            record_request_response_pair!("get")
           end
         end
 
         # Overrides method provided by Rack::Test::Methods
-        def post(uri, params = {}, env = {}, &block)
-          super(uri, params, env, &block).tap do |response|
-            record_request_response_pair!('post')
+        def post(*args)
+          super(*args).tap do |response, *rest|
+            record_request_response_pair!("post")
           end
         end
 
         # Overrides method provided by Rack::Test::Methods
-        def delete(uri, params = {}, env = {}, &block)
-          super(uri, params, env, &block).tap do |response|
+        def delete(*args)
+          super(*args).tap do |response|
             record_request_response_pair!('delete')
           end
         end
